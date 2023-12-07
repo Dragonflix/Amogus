@@ -23,17 +23,13 @@ jobs:
                   cache: 'npm'
 
             - name: Run CI command
-              run: cd my-dream-team-amogus
               run: npm ci
 
             - name: Check linting
-              run: cd my-dream-team-amogus
               run: npm run lint
             
             - name: Run the tests
-              run: cd my-dream-team-amogus
               run: npm run test
 
             - name: Build
-              run: cd my-dream-team-amogus
               run: npm run build

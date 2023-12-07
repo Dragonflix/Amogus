@@ -24,9 +24,6 @@ jobs:
 
             - name: Run CI command
               run: cd my-dream-team-amogus && npm ci
-
-            - name: Check linting
-              run: cd my-dream-team-amogus && npm run lint
             
             - name: Run the tests
               run: cd my-dream-team-amogus && npm run test

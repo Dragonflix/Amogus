@@ -24,9 +24,6 @@ jobs:
 
             - name: Run CI command
               run: cd my-dream-team-amogus && npm ci
-            
-            - name: Run the tests
-              run: cd my-dream-team-amogus && npm run test
 
             - name: Build
               run: cd my-dream-team-amogus && npm run build

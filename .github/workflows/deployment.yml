@@ -1,0 +1,39 @@
+name: Node.js CI
+
+on:
+    push:
+        branches: [main, develop]
+    pull_request:
+        branches: [main, develop]
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+
+        strategy:
+            matrix:
+                node-version: [14.15.x]
+
+        steps:
+            - uses: actions/checkout@v2
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v2
+              with:
+                  node-version: ${{ matrix.node-version }}
+                  cache: 'npm'
+
+            - name: Run CI command
+              run: cd my-dream-team-amogus
+              run: npm ci
+
+            - name: Check linting
+              run: cd my-dream-team-amogus
+              run: npm run lint
+            
+            - name: Run the tests
+              run: cd my-dream-team-amogus
+              run: npm run test
+
+            - name: Build
+              run: cd my-dream-team-amogus
+              run: npm run build
